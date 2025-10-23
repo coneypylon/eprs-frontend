@@ -60,19 +60,34 @@ function MyForm() {
     eCityUpper2: '2',
     eCityUpper3: '1',
     numseats: '6',
-    trainNum: '064',
-    carNum: '10',
-    dateNum: '045'
+    trainDigit1: '0',
+    trainDigit2: '6',
+    trainDigit3: '4',
+    carDigit1: '1',
+    carDigit2: '0',
+    dateDigit1: '0',
+    dateDigit2: '4',
+    dateDigit3: '5'
   })
 
   const handleSubmit = (event) => {
+    // Start City
     const sCityChar1 = formData.sCityLower1?.[parseInt(formData.sCityUpper1)] || ' ';
-    const eCityChar1 = formData.eCityLower1?.[parseInt(formData.eCityUpper1)] || ' ';
     const sCityChar2 = formData.sCityLower2?.[parseInt(formData.sCityUpper2)] || ' ';
-    const eCityChar2 = formData.eCityLower2?.[parseInt(formData.eCityUpper2)] || ' ';
     const sCityChar3 = formData.sCityLower3?.[parseInt(formData.sCityUpper3)] || ' ';
+    const startCity = sCityChar1 + sCityChar2 + sCityChar3
+    // End City
+    const eCityChar1 = formData.eCityLower1?.[parseInt(formData.eCityUpper1)] || ' ';
+    const eCityChar2 = formData.eCityLower2?.[parseInt(formData.eCityUpper2)] || ' ';
     const eCityChar3 = formData.eCityLower3?.[parseInt(formData.eCityUpper3)] || ' ';
-    const parsedString = formData.operation + formData.accom + sCityChar1 + sCityChar2 + sCityChar3 + eCityChar1 + eCityChar2 + eCityChar3 + "0"+ formData.numseats + formData.trainNum + formData.carNum + formData.dateNum
+    const endCity = eCityChar1 + eCityChar2 + eCityChar3
+    // Train Number
+    const trainNum = formData.trainDigit1 + formData.trainDigit2 + formData.trainDigit3
+    // Car Number
+    const carNum = formData.carDigit1 + formData.carDigit2
+    // Date
+    const dateNum = formData.dateDigit1 + formData.dateDigit2 + formData.dateDigit3
+    const parsedString = formData.operation + formData.accom + startCity + endCity + "0"+ formData.numseats + trainNum + carNum + dateNum
     
     callEPRS(parsedString).then((data) =>{
       var jsonData = data;
@@ -326,6 +341,96 @@ function MyForm() {
                 /> 0
               </label>
             </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit1" 
+                  value="0" 
+                  checked={formData.trainDigit1 === "0" } 
+                  onChange={handleChange} 
+                /> 0
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit2" 
+                  value="0" 
+                  checked={formData.trainDigit2 === "0" } 
+                  onChange={handleChange} 
+                /> 0
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit3" 
+                  value="0" 
+                  checked={formData.trainDigit3 === "0" } 
+                  onChange={handleChange} 
+                /> 0
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit1" 
+                  value="0" 
+                  checked={formData.carDigit1 === "0" } 
+                  onChange={handleChange} 
+                /> 0
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit2" 
+                  value="0" 
+                  checked={formData.carDigit2 === "0" } 
+                  onChange={handleChange} 
+                /> 0
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit1" 
+                  value="0" 
+                  checked={formData.dateDigit1 === "0" } 
+                  onChange={handleChange} 
+                /> 0
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit2" 
+                  value="0" 
+                  checked={formData.dateDigit2 === "0" } 
+                  onChange={handleChange} 
+                /> 0
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit3" 
+                  value="0" 
+                  checked={formData.dateDigit3 === "0" } 
+                  onChange={handleChange} 
+                /> 0
+              </label>
+            </td>
           </tr>
           <tr>{/* fourth row */}
             <td></td>
@@ -404,6 +509,96 @@ function MyForm() {
                   name="numseats" 
                   value="1" 
                   checked={formData.numseats === "1" } 
+                  onChange={handleChange} 
+                /> 1
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit1" 
+                  value="1" 
+                  checked={formData.trainDigit1 === "1" } 
+                  onChange={handleChange} 
+                /> 1
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit2" 
+                  value="1" 
+                  checked={formData.trainDigit2 === "1" } 
+                  onChange={handleChange} 
+                /> 1
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit3" 
+                  value="1" 
+                  checked={formData.trainDigit3 === "1" } 
+                  onChange={handleChange} 
+                /> 1
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit1" 
+                  value="1" 
+                  checked={formData.carDigit1 === "1" } 
+                  onChange={handleChange} 
+                /> 1
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit2" 
+                  value="1" 
+                  checked={formData.carDigit2 === "1" } 
+                  onChange={handleChange} 
+                /> 1
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit1" 
+                  value="1" 
+                  checked={formData.dateDigit1 === "1" } 
+                  onChange={handleChange} 
+                /> 1
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit2" 
+                  value="1" 
+                  checked={formData.dateDigit2 === "1" } 
+                  onChange={handleChange} 
+                /> 1
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit3" 
+                  value="1" 
+                  checked={formData.dateDigit3 === "1" } 
                   onChange={handleChange} 
                 /> 1
               </label>
@@ -500,6 +695,96 @@ function MyForm() {
                 /> 2
               </label>
             </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit1" 
+                  value="2" 
+                  checked={formData.trainDigit1 === "2" } 
+                  onChange={handleChange} 
+                /> 2
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit2" 
+                  value="2" 
+                  checked={formData.trainDigit2 === "2" } 
+                  onChange={handleChange} 
+                /> 2
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit3" 
+                  value="2" 
+                  checked={formData.trainDigit3 === "2" } 
+                  onChange={handleChange} 
+                /> 2
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit1" 
+                  value="2" 
+                  checked={formData.carDigit1 === "2" } 
+                  onChange={handleChange} 
+                /> 2
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit2" 
+                  value="2" 
+                  checked={formData.carDigit2 === "2" } 
+                  onChange={handleChange} 
+                /> 2
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit1" 
+                  value="2" 
+                  checked={formData.dateDigit1 === "2" } 
+                  onChange={handleChange} 
+                /> 2
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit2" 
+                  value="2" 
+                  checked={formData.dateDigit2 === "2" } 
+                  onChange={handleChange} 
+                /> 2
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit3" 
+                  value="2" 
+                  checked={formData.dateDigit3 === "2" } 
+                  onChange={handleChange} 
+                /> 2
+              </label>
+            </td>
           </tr>
           <tr>
             <td></td>
@@ -582,6 +867,96 @@ function MyForm() {
                 /> 3
               </label>
             </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit1" 
+                  value="3" 
+                  checked={formData.trainDigit1 === "3" } 
+                  onChange={handleChange} 
+                /> 3
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit2" 
+                  value="3" 
+                  checked={formData.trainDigit2 === "3" } 
+                  onChange={handleChange} 
+                /> 3
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit3" 
+                  value="3" 
+                  checked={formData.trainDigit3 === "3" } 
+                  onChange={handleChange} 
+                /> 3
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit1" 
+                  value="3" 
+                  checked={formData.carDigit1 === "3" } 
+                  onChange={handleChange} 
+                /> 3
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit2" 
+                  value="3" 
+                  checked={formData.carDigit2 === "3" } 
+                  onChange={handleChange} 
+                /> 3
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit1" 
+                  value="3" 
+                  checked={formData.dateDigit1 === "3" } 
+                  onChange={handleChange} 
+                /> 3
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit2" 
+                  value="3" 
+                  checked={formData.dateDigit2 === "3" } 
+                  onChange={handleChange} 
+                /> 3
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit3" 
+                  value="3" 
+                  checked={formData.dateDigit3 === "3" } 
+                  onChange={handleChange} 
+                /> 3
+              </label>
+            </td>
           </tr>
           <tr>
             <td></td>
@@ -660,6 +1035,96 @@ function MyForm() {
                   name="numseats" 
                   value="4" 
                   checked={formData.numseats === "4" } 
+                  onChange={handleChange} 
+                /> 4
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit1" 
+                  value="4" 
+                  checked={formData.trainDigit1 === "4" } 
+                  onChange={handleChange} 
+                /> 4
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit2" 
+                  value="4" 
+                  checked={formData.trainDigit2 === "4" } 
+                  onChange={handleChange} 
+                /> 4
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit3" 
+                  value="4" 
+                  checked={formData.trainDigit3 === "4" } 
+                  onChange={handleChange} 
+                /> 4
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit1" 
+                  value="4" 
+                  checked={formData.carDigit1 === "4" } 
+                  onChange={handleChange} 
+                /> 4
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit2" 
+                  value="4" 
+                  checked={formData.carDigit2 === "4" } 
+                  onChange={handleChange} 
+                /> 4
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit1" 
+                  value="4" 
+                  checked={formData.dateDigit1 === "4" } 
+                  onChange={handleChange} 
+                /> 4
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit2" 
+                  value="4" 
+                  checked={formData.dateDigit2 === "4" } 
+                  onChange={handleChange} 
+                /> 4
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit3" 
+                  value="4" 
+                  checked={formData.dateDigit3 === "4" } 
                   onChange={handleChange} 
                 /> 4
               </label>
@@ -756,6 +1221,96 @@ function MyForm() {
                 /> 5
               </label>
             </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit1" 
+                  value="5" 
+                  checked={formData.trainDigit1 === "5" } 
+                  onChange={handleChange} 
+                /> 5
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit2" 
+                  value="5" 
+                  checked={formData.trainDigit2 === "5" } 
+                  onChange={handleChange} 
+                /> 5
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit3" 
+                  value="5" 
+                  checked={formData.trainDigit3 === "5" } 
+                  onChange={handleChange} 
+                /> 5
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit1" 
+                  value="5" 
+                  checked={formData.carDigit1 === "5" } 
+                  onChange={handleChange} 
+                /> 5
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit2" 
+                  value="5" 
+                  checked={formData.carDigit2 === "5" } 
+                  onChange={handleChange} 
+                /> 5
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit1" 
+                  value="5" 
+                  checked={formData.dateDigit1 === "5" } 
+                  onChange={handleChange} 
+                /> 5
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit2" 
+                  value="5" 
+                  checked={formData.dateDigit2 === "5" } 
+                  onChange={handleChange} 
+                /> 5
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit3" 
+                  value="5" 
+                  checked={formData.dateDigit3 === "5" } 
+                  onChange={handleChange} 
+                /> 5
+              </label>
+            </td>
           </tr>
           <tr>
             <td>
@@ -770,12 +1325,72 @@ function MyForm() {
               </label>
             </td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="sCityLower1" 
+                  value="FOW" 
+                  checked={formData.sCityLower1 === "FOW" } 
+                  onChange={handleChange} 
+                />  FOW
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="sCityLower2" 
+                  value="FOW" 
+                  checked={formData.sCityLower2 === "FOW" } 
+                  onChange={handleChange} 
+                />  FOW
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="sCityLower3" 
+                  value="FOW" 
+                  checked={formData.sCityLower3 === "FOW" } 
+                  onChange={handleChange} 
+                />  FOW
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="eCityLower1" 
+                  value="FOW" 
+                  checked={formData.eCityLower1 === "FOW" } 
+                  onChange={handleChange} 
+                /> FOW
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="eCityLower2" 
+                  value="FOW" 
+                  checked={formData.eCityLower2 === "FOW" } 
+                  onChange={handleChange} 
+                /> FOW
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="eCityLower3" 
+                  value="FOW" 
+                  checked={formData.eCityLower3 === "FOW" } 
+                  onChange={handleChange} 
+                /> FOW
+              </label>
+            </td>
             <td></td>
             <td>
               <label>
@@ -788,16 +1403,166 @@ function MyForm() {
                 /> 6
               </label>
             </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit1" 
+                  value="6" 
+                  checked={formData.trainDigit1 === "6" } 
+                  onChange={handleChange} 
+                /> 6
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit2" 
+                  value="6" 
+                  checked={formData.trainDigit2 === "6" } 
+                  onChange={handleChange} 
+                /> 6
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit3" 
+                  value="6" 
+                  checked={formData.trainDigit3 === "6" } 
+                  onChange={handleChange} 
+                /> 6
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit1" 
+                  value="6" 
+                  checked={formData.carDigit1 === "6" } 
+                  onChange={handleChange} 
+                /> 6
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit2" 
+                  value="6" 
+                  checked={formData.carDigit2 === "6" } 
+                  onChange={handleChange} 
+                /> 6
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit1" 
+                  value="6" 
+                  checked={formData.dateDigit1 === "6" } 
+                  onChange={handleChange} 
+                /> 6
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit2" 
+                  value="6" 
+                  checked={formData.dateDigit2 === "6" } 
+                  onChange={handleChange} 
+                /> 6
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit3" 
+                  value="6" 
+                  checked={formData.dateDigit3 === "6" } 
+                  onChange={handleChange} 
+                /> 6
+              </label>
+            </td>
           </tr>
           <tr>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="sCityLower1" 
+                  value="GPX" 
+                  checked={formData.sCityLower1 === "GPX" } 
+                  onChange={handleChange} 
+                />  GPX
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="sCityLower2" 
+                  value="GPX" 
+                  checked={formData.sCityLower2 === "GPX" } 
+                  onChange={handleChange} 
+                />  GPX
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="sCityLower3" 
+                  value="GPX" 
+                  checked={formData.sCityLower3 === "GPX" } 
+                  onChange={handleChange} 
+                />  GPX
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="eCityLower1" 
+                  value="GPX" 
+                  checked={formData.eCityLower1 === "GPX" } 
+                  onChange={handleChange} 
+                /> GPX
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="eCityLower2" 
+                  value="GPX" 
+                  checked={formData.eCityLower2 === "GPX" } 
+                  onChange={handleChange} 
+                /> GPX
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="eCityLower3" 
+                  value="GPX" 
+                  checked={formData.eCityLower3 === "GPX" } 
+                  onChange={handleChange} 
+                /> GPX
+              </label>
+            </td>
             <td></td>
             <td>
               <label>
@@ -806,6 +1571,96 @@ function MyForm() {
                   name="numseats" 
                   value="7" 
                   checked={formData.numseats === "7" } 
+                  onChange={handleChange} 
+                /> 7
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit1" 
+                  value="7" 
+                  checked={formData.trainDigit1 === "7" } 
+                  onChange={handleChange} 
+                /> 7
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit2" 
+                  value="7" 
+                  checked={formData.trainDigit2 === "7" } 
+                  onChange={handleChange} 
+                /> 7
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit3" 
+                  value="7" 
+                  checked={formData.trainDigit3 === "7" } 
+                  onChange={handleChange} 
+                /> 7
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit1" 
+                  value="7" 
+                  checked={formData.carDigit1 === "7" } 
+                  onChange={handleChange} 
+                /> 7
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit2" 
+                  value="7" 
+                  checked={formData.carDigit2 === "7" } 
+                  onChange={handleChange} 
+                /> 7
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit1" 
+                  value="7" 
+                  checked={formData.dateDigit1 === "7" } 
+                  onChange={handleChange} 
+                /> 7
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit2" 
+                  value="7" 
+                  checked={formData.dateDigit2 === "7" } 
+                  onChange={handleChange} 
+                /> 7
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit3" 
+                  value="7" 
+                  checked={formData.dateDigit3 === "7" } 
                   onChange={handleChange} 
                 /> 7
               </label>
@@ -824,12 +1679,72 @@ function MyForm() {
               </label>
             </td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="sCityLower1" 
+                  value="HQY" 
+                  checked={formData.sCityLower1 === "HQY" } 
+                  onChange={handleChange} 
+                />  HQY
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="sCityLower2" 
+                  value="HQY" 
+                  checked={formData.sCityLower2 === "HQY" } 
+                  onChange={handleChange} 
+                />  HQY
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="sCityLower3" 
+                  value="HQY" 
+                  checked={formData.sCityLower3 === "HQY" } 
+                  onChange={handleChange} 
+                />  HQY
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="eCityLower1" 
+                  value="HQY" 
+                  checked={formData.eCityLower1 === "HQY" } 
+                  onChange={handleChange} 
+                /> HQY
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="eCityLower2" 
+                  value="HQY" 
+                  checked={formData.eCityLower2 === "HQY" } 
+                  onChange={handleChange} 
+                /> HQY
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="eCityLower3" 
+                  value="HQY" 
+                  checked={formData.eCityLower3 === "HQY" } 
+                  onChange={handleChange} 
+                /> HQY
+              </label>
+            </td>
             <td></td>
             <td>
               <label>
@@ -838,6 +1753,96 @@ function MyForm() {
                   name="numseats" 
                   value="8" 
                   checked={formData.numseats === "8" } 
+                  onChange={handleChange} 
+                /> 8
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit1" 
+                  value="8" 
+                  checked={formData.trainDigit1 === "8" } 
+                  onChange={handleChange} 
+                /> 8
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit2" 
+                  value="8" 
+                  checked={formData.trainDigit2 === "8" } 
+                  onChange={handleChange} 
+                /> 8
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit3" 
+                  value="8" 
+                  checked={formData.trainDigit3 === "8" } 
+                  onChange={handleChange} 
+                /> 8
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit1" 
+                  value="8" 
+                  checked={formData.carDigit1 === "8" } 
+                  onChange={handleChange} 
+                /> 8
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit2" 
+                  value="8" 
+                  checked={formData.carDigit2 === "8" } 
+                  onChange={handleChange} 
+                /> 8
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit1" 
+                  value="8" 
+                  checked={formData.dateDigit1 === "8" } 
+                  onChange={handleChange} 
+                /> 8
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit2" 
+                  value="8" 
+                  checked={formData.dateDigit2 === "8" } 
+                  onChange={handleChange} 
+                /> 8
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit3" 
+                  value="8" 
+                  checked={formData.dateDigit3 === "8" } 
                   onChange={handleChange} 
                 /> 8
               </label>
@@ -866,12 +1871,72 @@ function MyForm() {
                 /> Z
               </label>
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="sCityLower1" 
+                  value="IRZ" 
+                  checked={formData.sCityLower1 === "IRZ" } 
+                  onChange={handleChange} 
+                />  IRZ
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="sCityLower2" 
+                  value="IRZ" 
+                  checked={formData.sCityLower2 === "IRZ" } 
+                  onChange={handleChange} 
+                />  IRZ
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="sCityLower3" 
+                  value="IRZ" 
+                  checked={formData.sCityLower3 === "IRZ" } 
+                  onChange={handleChange} 
+                />  IRZ
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="eCityLower1" 
+                  value="IRZ" 
+                  checked={formData.eCityLower1 === "IRZ" } 
+                  onChange={handleChange} 
+                /> IRZ
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="eCityLower2" 
+                  value="IRZ" 
+                  checked={formData.eCityLower2 === "IRZ" } 
+                  onChange={handleChange} 
+                /> IRZ
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="eCityLower3" 
+                  value="IRZ" 
+                  checked={formData.eCityLower3 === "IRZ" } 
+                  onChange={handleChange} 
+                /> IRZ
+              </label>
+            </td>
             <td></td>
             <td>
               <label>
@@ -880,6 +1945,96 @@ function MyForm() {
                   name="numseats" 
                   value="9" 
                   checked={formData.numseats === "9" } 
+                  onChange={handleChange} 
+                /> 9
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit1" 
+                  value="9" 
+                  checked={formData.trainDigit1 === "9" } 
+                  onChange={handleChange} 
+                /> 9
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit2" 
+                  value="9" 
+                  checked={formData.trainDigit2 === "9" } 
+                  onChange={handleChange} 
+                /> 9
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="trainDigit3" 
+                  value="9" 
+                  checked={formData.trainDigit3 === "9" } 
+                  onChange={handleChange} 
+                /> 9
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit1" 
+                  value="9" 
+                  checked={formData.carDigit1 === "9" } 
+                  onChange={handleChange} 
+                /> 9
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="carDigit2" 
+                  value="9" 
+                  checked={formData.carDigit2 === "9" } 
+                  onChange={handleChange} 
+                /> 9
+              </label>
+            </td>
+            <td></td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit1" 
+                  value="9" 
+                  checked={formData.dateDigit1 === "9" } 
+                  onChange={handleChange} 
+                /> 9
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit2" 
+                  value="9" 
+                  checked={formData.dateDigit2 === "9" } 
+                  onChange={handleChange} 
+                /> 9
+              </label>
+            </td>
+            <td>
+              <label>
+                <input 
+                  type="radio" 
+                  name="dateDigit3" 
+                  value="9" 
+                  checked={formData.dateDigit3 === "9" } 
                   onChange={handleChange} 
                 /> 9
               </label>
