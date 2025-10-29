@@ -50,6 +50,24 @@
   text-align: left;
 }
 
+.punchcard-table {
+  border: 2px solid rgb(0, 0, 0);
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+.bordered-centered-div {
+  border: 2px solid rgb(0, 0, 0);
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+  height: 25%;
+  text-align: center;
+}
+
 .centering-div {
   display: flex;
   justify-content: center;
@@ -61,7 +79,7 @@
 .mark-sense {
   display: block;
   position: relative;
-  padding-left: 35px;
+  padding-left: 0px;
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
@@ -83,16 +101,26 @@
 
 /* Create a custom radio button */
 .mark {
-  display:inline-block;
+  /* Set to flex to center the text */
+  display: inline-flex; 
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  
   position: relative;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 10px;
+  
+  height: 30px; 
+  width: 10px; 
+  
   margin-right: 10px;
   vertical-align: top;
   background-color: #eee;
   border-radius: 0;
+  
+  /* Inherit text styling from .mark-sense, but can be customized here */
+  font-size: 14px; 
+  writing-mode: horizontal-lr;
 }
 
 /* On mouse-over, add a grey background color */

@@ -61,6 +61,7 @@ function MyForm({paper,writePaper}) {
   })
 
   const handleSubmit = (event) => {
+
     // Start City
     const sCityChar1 = formData.sCityLower1?.[parseInt(formData.sCityUpper1)] || ' ';
     const sCityChar2 = formData.sCityLower2?.[parseInt(formData.sCityUpper2)] || ' ';
@@ -83,6 +84,7 @@ function MyForm({paper,writePaper}) {
       ...prevPaper.slice(1),
       `${parsedString}`
     ]));
+
     
     callEPRS(parsedString).then((data) =>{
       var jsonData = data;
@@ -106,7 +108,7 @@ function MyForm({paper,writePaper}) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <table>
+      <table className="punchcard-table">
         <tbody>
           <tr>
             <td></td>
@@ -338,7 +340,7 @@ function MyForm({paper,writePaper}) {
                   value="0" 
                   checked={formData.numseats === "0" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 0
+                /><span class="mark">0</span>
               </label>
             </td>
             <td></td>
@@ -350,7 +352,7 @@ function MyForm({paper,writePaper}) {
                   value="0" 
                   checked={formData.trainDigit1 === "0" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 0
+                /><span class="mark">0</span>
               </label>
             </td>
             <td>
@@ -361,7 +363,7 @@ function MyForm({paper,writePaper}) {
                   value="0" 
                   checked={formData.trainDigit2 === "0" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 0
+                /><span class="mark">0</span>
               </label>
             </td>
             <td>
@@ -372,7 +374,7 @@ function MyForm({paper,writePaper}) {
                   value="0" 
                   checked={formData.trainDigit3 === "0" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 0
+                /><span class="mark">0</span>
               </label>
             </td>
             <td>
@@ -383,7 +385,7 @@ function MyForm({paper,writePaper}) {
                   value="0" 
                   checked={formData.carDigit1 === "0" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 0
+                /><span class="mark">0</span>
               </label>
             </td>
             <td>
@@ -394,7 +396,7 @@ function MyForm({paper,writePaper}) {
                   value="0" 
                   checked={formData.carDigit2 === "0" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 0
+                /><span class="mark">0</span>
               </label>
             </td>
             <td></td>
@@ -406,7 +408,7 @@ function MyForm({paper,writePaper}) {
                   value="0" 
                   checked={formData.dateDigit1 === "0" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 0
+                /><span class="mark">0</span>
               </label>
             </td>
             <td>
@@ -417,7 +419,7 @@ function MyForm({paper,writePaper}) {
                   value="0" 
                   checked={formData.dateDigit2 === "0" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 0
+                /><span class="mark">0</span>
               </label>
             </td>
             <td>
@@ -428,7 +430,7 @@ function MyForm({paper,writePaper}) {
                   value="0" 
                   checked={formData.dateDigit3 === "0" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 0
+                /><span class="mark">0</span>
               </label>
             </td>
           </tr>
@@ -443,7 +445,7 @@ function MyForm({paper,writePaper}) {
                   value="AJ " 
                   checked={formData.sCityLower1 === "AJ " } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  AJ
+                /><span class="mark">AJ</span>  
               </label>
             </td>
             <td>
@@ -454,7 +456,7 @@ function MyForm({paper,writePaper}) {
                   value="AJ " 
                   checked={formData.sCityLower2 === "AJ " } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  AJ
+                /><span class="mark">AJ</span>  
               </label>
             </td>
             <td>
@@ -465,7 +467,7 @@ function MyForm({paper,writePaper}) {
                   value="AJ " 
                   checked={formData.sCityLower3 === "AJ " } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  AJ
+                /><span class="mark">AJ</span>  
               </label>
             </td>
             <td>
@@ -476,7 +478,7 @@ function MyForm({paper,writePaper}) {
                   value="AJ " 
                   checked={formData.eCityLower1 === "AJ " } 
                   onChange={handleChange} 
-                /><span class="mark"></span> AJ
+                /><span class="mark">AJ</span> 
               </label>
             </td>
             <td>
@@ -487,7 +489,7 @@ function MyForm({paper,writePaper}) {
                   value="AJ " 
                   checked={formData.eCityLower2 === "AJ " } 
                   onChange={handleChange} 
-                /><span class="mark"></span> AJ
+                /><span class="mark">AJ</span> 
               </label>
             </td>
             <td>
@@ -498,7 +500,7 @@ function MyForm({paper,writePaper}) {
                   value="AJ " 
                   checked={formData.eCityLower3 === "AJ " } 
                   onChange={handleChange} 
-                /><span class="mark"></span> AJ
+                /><span class="mark">AJ</span> 
               </label>
             </td>
             <td></td>
@@ -510,7 +512,7 @@ function MyForm({paper,writePaper}) {
                   value="1" 
                   checked={formData.numseats === "1" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 1
+                /><span class="mark">1</span> 
               </label>
             </td>
             <td></td>
@@ -522,7 +524,7 @@ function MyForm({paper,writePaper}) {
                   value="1" 
                   checked={formData.trainDigit1 === "1" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 1
+                /><span class="mark">1</span> 
               </label>
             </td>
             <td>
@@ -533,7 +535,7 @@ function MyForm({paper,writePaper}) {
                   value="1" 
                   checked={formData.trainDigit2 === "1" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 1
+                /><span class="mark">1</span> 
               </label>
             </td>
             <td>
@@ -544,7 +546,7 @@ function MyForm({paper,writePaper}) {
                   value="1" 
                   checked={formData.trainDigit3 === "1" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 1
+                /><span class="mark">1</span> 
               </label>
             </td>
             <td>
@@ -555,7 +557,7 @@ function MyForm({paper,writePaper}) {
                   value="1" 
                   checked={formData.carDigit1 === "1" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 1
+                /><span class="mark">1</span> 
               </label>
             </td>
             <td>
@@ -566,7 +568,7 @@ function MyForm({paper,writePaper}) {
                   value="1" 
                   checked={formData.carDigit2 === "1" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 1
+                /><span class="mark">1</span> 
               </label>
             </td>
             <td></td>
@@ -578,7 +580,7 @@ function MyForm({paper,writePaper}) {
                   value="1" 
                   checked={formData.dateDigit1 === "1" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 1
+                /><span class="mark">1</span> 
               </label>
             </td>
             <td>
@@ -589,7 +591,7 @@ function MyForm({paper,writePaper}) {
                   value="1" 
                   checked={formData.dateDigit2 === "1" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 1
+                /><span class="mark">1</span> 
               </label>
             </td>
             <td>
@@ -600,7 +602,7 @@ function MyForm({paper,writePaper}) {
                   value="1" 
                   checked={formData.dateDigit3 === "1" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 1
+                /><span class="mark">1</span> 
               </label>
             </td>
           </tr>
@@ -613,7 +615,7 @@ function MyForm({paper,writePaper}) {
                   value="K" 
                   checked={formData.operation === 'K'} 
                   onChange={handleChange} 
-                /><span class="mark"></span> K
+                /><span class="mark">K</span>
               </label>
             </td>
             <td></td>
@@ -625,7 +627,7 @@ function MyForm({paper,writePaper}) {
                   value="BKS" 
                   checked={formData.sCityLower1 === "BKS" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  BKS
+                /><span class="mark">BKS</span>
               </label>
             </td>
             <td>
@@ -636,7 +638,7 @@ function MyForm({paper,writePaper}) {
                   value="BKS" 
                   checked={formData.sCityLower2 === "BKS" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  BKS
+                /><span class="mark">BKS</span>
               </label>
             </td>
             <td>
@@ -647,7 +649,7 @@ function MyForm({paper,writePaper}) {
                   value="BKS" 
                   checked={formData.sCityLower3 === "BKS" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  BKS
+                /><span class="mark">BKS</span>
               </label>
             </td>
             <td>
@@ -658,7 +660,7 @@ function MyForm({paper,writePaper}) {
                   value="BKS" 
                   checked={formData.eCityLower1 === "BKS" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> BKS
+                /><span class="mark">BKS</span> 
               </label>
             </td>
             <td>
@@ -669,7 +671,7 @@ function MyForm({paper,writePaper}) {
                   value="BKS" 
                   checked={formData.eCityLower2 === "BKS" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> BKS
+                /><span class="mark">BKS</span> 
               </label>
             </td>
             <td>
@@ -680,7 +682,7 @@ function MyForm({paper,writePaper}) {
                   value="BKS" 
                   checked={formData.eCityLower3 === "BKS" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> BKS
+                /><span class="mark">BKS</span> 
               </label>
             </td>
             <td></td>
@@ -692,7 +694,7 @@ function MyForm({paper,writePaper}) {
                   value="2" 
                   checked={formData.numseats === "2" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 2
+                /><span class="mark">2</span> 
               </label>
             </td>
             <td></td>
@@ -704,7 +706,7 @@ function MyForm({paper,writePaper}) {
                   value="2" 
                   checked={formData.trainDigit1 === "2" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 2
+                /><span class="mark">2</span> 
               </label>
             </td>
             <td>
@@ -715,7 +717,7 @@ function MyForm({paper,writePaper}) {
                   value="2" 
                   checked={formData.trainDigit2 === "2" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 2
+                /><span class="mark">2</span> 
               </label>
             </td>
             <td>
@@ -726,7 +728,7 @@ function MyForm({paper,writePaper}) {
                   value="2" 
                   checked={formData.trainDigit3 === "2" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 2
+                /><span class="mark">2</span> 
               </label>
             </td>
             <td>
@@ -737,7 +739,7 @@ function MyForm({paper,writePaper}) {
                   value="2" 
                   checked={formData.carDigit1 === "2" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 2
+                /><span class="mark">2</span> 
               </label>
             </td>
             <td>
@@ -748,7 +750,7 @@ function MyForm({paper,writePaper}) {
                   value="2" 
                   checked={formData.carDigit2 === "2" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 2
+                /><span class="mark">2</span> 
               </label>
             </td>
             <td></td>
@@ -760,7 +762,7 @@ function MyForm({paper,writePaper}) {
                   value="2" 
                   checked={formData.dateDigit1 === "2" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 2
+                /><span class="mark">2</span> 
               </label>
             </td>
             <td>
@@ -771,7 +773,7 @@ function MyForm({paper,writePaper}) {
                   value="2" 
                   checked={formData.dateDigit2 === "2" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 2
+                /><span class="mark">2</span> 
               </label>
             </td>
             <td>
@@ -782,7 +784,7 @@ function MyForm({paper,writePaper}) {
                   value="2" 
                   checked={formData.dateDigit3 === "2" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 2
+                /><span class="mark">2</span> 
               </label>
             </td>
           </tr>
@@ -797,7 +799,7 @@ function MyForm({paper,writePaper}) {
                   value="CLT" 
                   checked={formData.sCityLower1 === "CLT" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  CLT
+                /><span class="mark">CLT</span>  
               </label>
             </td>
             <td>
@@ -808,7 +810,7 @@ function MyForm({paper,writePaper}) {
                   value="CLT" 
                   checked={formData.sCityLower2 === "CLT" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  CLT
+                /><span class="mark">CLT</span>  
               </label>
             </td>
             <td>
@@ -819,7 +821,7 @@ function MyForm({paper,writePaper}) {
                   value="CLT" 
                   checked={formData.sCityLower3 === "CLT" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  CLT
+                /><span class="mark">CLT</span>  
               </label>
             </td>
             <td>
@@ -830,7 +832,7 @@ function MyForm({paper,writePaper}) {
                   value="CLT" 
                   checked={formData.eCityLower1 === "CLT" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> CLT
+                /><span class="mark">CLT</span> 
               </label>
             </td>
             <td>
@@ -841,7 +843,7 @@ function MyForm({paper,writePaper}) {
                   value="CLT" 
                   checked={formData.eCityLower2 === "CLT" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> CLT
+                /><span class="mark">CLT</span> 
               </label>
             </td>
             <td>
@@ -852,7 +854,7 @@ function MyForm({paper,writePaper}) {
                   value="CLT" 
                   checked={formData.eCityLower3 === "CLT" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> CLT
+                /><span class="mark">CLT</span> 
               </label>
             </td>
             <td></td>
@@ -864,7 +866,7 @@ function MyForm({paper,writePaper}) {
                   value="3" 
                   checked={formData.numseats === "3" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 3
+                /><span class="mark">3</span> 
               </label>
             </td>
             <td></td>
@@ -876,7 +878,7 @@ function MyForm({paper,writePaper}) {
                   value="3" 
                   checked={formData.trainDigit1 === "3" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 3
+                /><span class="mark">3</span> 
               </label>
             </td>
             <td>
@@ -887,7 +889,7 @@ function MyForm({paper,writePaper}) {
                   value="3" 
                   checked={formData.trainDigit2 === "3" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 3
+                /><span class="mark">3</span> 
               </label>
             </td>
             <td>
@@ -898,7 +900,7 @@ function MyForm({paper,writePaper}) {
                   value="3" 
                   checked={formData.trainDigit3 === "3" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 3
+                /><span class="mark">3</span> 
               </label>
             </td>
             <td>
@@ -909,7 +911,7 @@ function MyForm({paper,writePaper}) {
                   value="3" 
                   checked={formData.carDigit1 === "3" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 3
+                /><span class="mark">3</span> 
               </label>
             </td>
             <td>
@@ -920,7 +922,7 @@ function MyForm({paper,writePaper}) {
                   value="3" 
                   checked={formData.carDigit2 === "3" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 3
+                /><span class="mark">3</span> 
               </label>
             </td>
             <td></td>
@@ -932,7 +934,7 @@ function MyForm({paper,writePaper}) {
                   value="3" 
                   checked={formData.dateDigit1 === "3" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 3
+                /><span class="mark">3</span> 
               </label>
             </td>
             <td>
@@ -943,7 +945,7 @@ function MyForm({paper,writePaper}) {
                   value="3" 
                   checked={formData.dateDigit2 === "3" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 3
+                /><span class="mark">3</span> 
               </label>
             </td>
             <td>
@@ -954,7 +956,7 @@ function MyForm({paper,writePaper}) {
                   value="3" 
                   checked={formData.dateDigit3 === "3" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 3
+                /><span class="mark">3</span> 
               </label>
             </td>
           </tr>
@@ -969,7 +971,7 @@ function MyForm({paper,writePaper}) {
                   value="DMU" 
                   checked={formData.sCityLower1 === "DMU" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  DMU
+                /><span class="mark">DMU</span>  
               </label>
             </td>
             <td>
@@ -980,7 +982,7 @@ function MyForm({paper,writePaper}) {
                   value="DMU" 
                   checked={formData.sCityLower2 === "DMU" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  DMU
+                /><span class="mark">DMU</span>  
               </label>
             </td>
             <td>
@@ -991,7 +993,7 @@ function MyForm({paper,writePaper}) {
                   value="DMU" 
                   checked={formData.sCityLower3 === "DMU" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  DMU
+                /><span class="mark">DMU</span>  
               </label>
             </td>
             <td>
@@ -1002,7 +1004,7 @@ function MyForm({paper,writePaper}) {
                   value="DMU" 
                   checked={formData.eCityLower1 === "DMU" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> DMU
+                /><span class="mark">DMU</span> 
               </label>
             </td>
             <td>
@@ -1013,7 +1015,7 @@ function MyForm({paper,writePaper}) {
                   value="DMU" 
                   checked={formData.eCityLower2 === "DMU" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> DMU
+                /><span class="mark">DMU</span> 
               </label>
             </td>
             <td>
@@ -1024,7 +1026,7 @@ function MyForm({paper,writePaper}) {
                   value="DMU" 
                   checked={formData.eCityLower3 === "DMU" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> DMU
+                /><span class="mark">DMU</span>
               </label>
             </td>
             <td></td>
@@ -1036,7 +1038,7 @@ function MyForm({paper,writePaper}) {
                   value="4" 
                   checked={formData.numseats === "4" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 4
+                /><span class="mark">4</span> 
               </label>
             </td>
             <td></td>
@@ -1048,7 +1050,7 @@ function MyForm({paper,writePaper}) {
                   value="4" 
                   checked={formData.trainDigit1 === "4" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 4
+                /><span class="mark">4</span> 
               </label>
             </td>
             <td>
@@ -1059,7 +1061,7 @@ function MyForm({paper,writePaper}) {
                   value="4" 
                   checked={formData.trainDigit2 === "4" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 4
+                /><span class="mark">4</span> 
               </label>
             </td>
             <td>
@@ -1070,7 +1072,7 @@ function MyForm({paper,writePaper}) {
                   value="4" 
                   checked={formData.trainDigit3 === "4" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 4
+                /><span class="mark">4</span> 
               </label>
             </td>
             <td>
@@ -1081,7 +1083,7 @@ function MyForm({paper,writePaper}) {
                   value="4" 
                   checked={formData.carDigit1 === "4" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 4
+                /><span class="mark">4</span> 
               </label>
             </td>
             <td>
@@ -1092,7 +1094,7 @@ function MyForm({paper,writePaper}) {
                   value="4" 
                   checked={formData.carDigit2 === "4" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 4
+                /><span class="mark">4</span> 
               </label>
             </td>
             <td></td>
@@ -1104,7 +1106,7 @@ function MyForm({paper,writePaper}) {
                   value="4" 
                   checked={formData.dateDigit1 === "4" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 4
+                /><span class="mark">4</span> 
               </label>
             </td>
             <td>
@@ -1115,7 +1117,7 @@ function MyForm({paper,writePaper}) {
                   value="4" 
                   checked={formData.dateDigit2 === "4" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 4
+                /><span class="mark">4</span> 
               </label>
             </td>
             <td>
@@ -1126,7 +1128,7 @@ function MyForm({paper,writePaper}) {
                   value="4" 
                   checked={formData.dateDigit3 === "4" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 4
+                /><span class="mark">4</span> 
               </label>
             </td>
           </tr>
@@ -1140,7 +1142,7 @@ function MyForm({paper,writePaper}) {
                   value="Y" 
                   checked={formData.accom === 'Y'} 
                   onChange={handleChange} 
-                /><span class="mark"></span> Y
+                /><span class="mark">Y</span> 
               </label>
             </td>
             <td>
@@ -1151,7 +1153,7 @@ function MyForm({paper,writePaper}) {
                   value="ENV" 
                   checked={formData.sCityLower1 === "ENV" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  ENV
+                /><span class="mark">ENV</span>  
               </label>
             </td>
             <td>
@@ -1162,7 +1164,7 @@ function MyForm({paper,writePaper}) {
                   value="ENV" 
                   checked={formData.sCityLower2 === "ENV" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  ENV
+                /><span class="mark">ENV</span>  
               </label>
             </td>
             <td>
@@ -1173,7 +1175,7 @@ function MyForm({paper,writePaper}) {
                   value="ENV" 
                   checked={formData.sCityLower3 === "ENV" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  ENV
+                /><span class="mark">ENV</span>  
               </label>
             </td>
             <td>
@@ -1184,7 +1186,7 @@ function MyForm({paper,writePaper}) {
                   value="ENV" 
                   checked={formData.eCityLower1 === "ENV" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> ENV
+                /><span class="mark">ENV</span> 
               </label>
             </td>
             <td>
@@ -1195,7 +1197,7 @@ function MyForm({paper,writePaper}) {
                   value="ENV" 
                   checked={formData.eCityLower2 === "ENV" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> ENV
+                /><span class="mark">ENV</span> 
               </label>
             </td>
             <td>
@@ -1206,7 +1208,7 @@ function MyForm({paper,writePaper}) {
                   value="ENV" 
                   checked={formData.eCityLower3 === "ENV" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> ENV
+                /><span class="mark">ENV</span> 
               </label>
             </td>
             <td></td>
@@ -1218,7 +1220,7 @@ function MyForm({paper,writePaper}) {
                   value="5" 
                   checked={formData.numseats === "5" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 5
+                /><span class="mark">5</span> 
               </label>
             </td>
             <td></td>
@@ -1230,7 +1232,7 @@ function MyForm({paper,writePaper}) {
                   value="5" 
                   checked={formData.trainDigit1 === "5" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 5
+                /><span class="mark">5</span> 
               </label>
             </td>
             <td>
@@ -1241,7 +1243,7 @@ function MyForm({paper,writePaper}) {
                   value="5" 
                   checked={formData.trainDigit2 === "5" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 5
+                /><span class="mark">5</span> 
               </label>
             </td>
             <td>
@@ -1252,7 +1254,7 @@ function MyForm({paper,writePaper}) {
                   value="5" 
                   checked={formData.trainDigit3 === "5" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 5
+                /><span class="mark">5</span> 
               </label>
             </td>
             <td>
@@ -1263,7 +1265,7 @@ function MyForm({paper,writePaper}) {
                   value="5" 
                   checked={formData.carDigit1 === "5" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 5
+                /><span class="mark">5</span> 
               </label>
             </td>
             <td>
@@ -1274,7 +1276,7 @@ function MyForm({paper,writePaper}) {
                   value="5" 
                   checked={formData.carDigit2 === "5" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 5
+                /><span class="mark">5</span> 
               </label>
             </td>
             <td></td>
@@ -1286,7 +1288,7 @@ function MyForm({paper,writePaper}) {
                   value="5" 
                   checked={formData.dateDigit1 === "5" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 5
+                /><span class="mark">5</span> 
               </label>
             </td>
             <td>
@@ -1297,7 +1299,7 @@ function MyForm({paper,writePaper}) {
                   value="5" 
                   checked={formData.dateDigit2 === "5" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 5
+                /><span class="mark">5</span> 
               </label>
             </td>
             <td>
@@ -1308,7 +1310,7 @@ function MyForm({paper,writePaper}) {
                   value="5" 
                   checked={formData.dateDigit3 === "5" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 5
+                /><span class="mark">5</span> 
               </label>
             </td>
           </tr>
@@ -1321,7 +1323,7 @@ function MyForm({paper,writePaper}) {
                   value="O" 
                   checked={formData.operation === 'O'} 
                   onChange={handleChange} 
-                /><span class="mark"></span> O
+                /><span class="mark">O</span> 
               </label>
             </td>
             <td></td>
@@ -1333,7 +1335,7 @@ function MyForm({paper,writePaper}) {
                   value="FOW" 
                   checked={formData.sCityLower1 === "FOW" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  FOW
+                /><span class="mark">FOW</span>  
               </label>
             </td>
             <td>
@@ -1344,7 +1346,7 @@ function MyForm({paper,writePaper}) {
                   value="FOW" 
                   checked={formData.sCityLower2 === "FOW" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  FOW
+                /><span class="mark">FOW</span>  
               </label>
             </td>
             <td>
@@ -1355,7 +1357,7 @@ function MyForm({paper,writePaper}) {
                   value="FOW" 
                   checked={formData.sCityLower3 === "FOW" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  FOW
+                /><span class="mark">FOW</span>  
               </label>
             </td>
             <td>
@@ -1366,7 +1368,7 @@ function MyForm({paper,writePaper}) {
                   value="FOW" 
                   checked={formData.eCityLower1 === "FOW" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> FOW
+                /><span class="mark">FOW</span> 
               </label>
             </td>
             <td>
@@ -1377,7 +1379,7 @@ function MyForm({paper,writePaper}) {
                   value="FOW" 
                   checked={formData.eCityLower2 === "FOW" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> FOW
+                /><span class="mark">FOW</span> 
               </label>
             </td>
             <td>
@@ -1388,7 +1390,7 @@ function MyForm({paper,writePaper}) {
                   value="FOW" 
                   checked={formData.eCityLower3 === "FOW" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> FOW
+                /><span class="mark">FOW</span> 
               </label>
             </td>
             <td></td>
@@ -1400,7 +1402,7 @@ function MyForm({paper,writePaper}) {
                   value="6" 
                   checked={formData.numseats === "6" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 6
+                /><span class="mark">6</span> 
               </label>
             </td>
             <td></td>
@@ -1412,7 +1414,7 @@ function MyForm({paper,writePaper}) {
                   value="6" 
                   checked={formData.trainDigit1 === "6" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 6
+                /><span class="mark">6</span> 
               </label>
             </td>
             <td>
@@ -1423,7 +1425,7 @@ function MyForm({paper,writePaper}) {
                   value="6" 
                   checked={formData.trainDigit2 === "6" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 6
+                /><span class="mark">6</span> 
               </label>
             </td>
             <td>
@@ -1434,7 +1436,7 @@ function MyForm({paper,writePaper}) {
                   value="6" 
                   checked={formData.trainDigit3 === "6" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 6
+                /><span class="mark">6</span> 
               </label>
             </td>
             <td>
@@ -1445,7 +1447,7 @@ function MyForm({paper,writePaper}) {
                   value="6" 
                   checked={formData.carDigit1 === "6" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 6
+                /><span class="mark">6</span> 
               </label>
             </td>
             <td>
@@ -1456,7 +1458,7 @@ function MyForm({paper,writePaper}) {
                   value="6" 
                   checked={formData.carDigit2 === "6" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 6
+                /><span class="mark">6</span> 
               </label>
             </td>
             <td></td>
@@ -1468,7 +1470,7 @@ function MyForm({paper,writePaper}) {
                   value="6" 
                   checked={formData.dateDigit1 === "6" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 6
+                /><span class="mark">6</span> 
               </label>
             </td>
             <td>
@@ -1479,7 +1481,7 @@ function MyForm({paper,writePaper}) {
                   value="6" 
                   checked={formData.dateDigit2 === "6" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 6
+                /><span class="mark">6</span> 
               </label>
             </td>
             <td>
@@ -1490,7 +1492,7 @@ function MyForm({paper,writePaper}) {
                   value="6" 
                   checked={formData.dateDigit3 === "6" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 6
+                /><span class="mark">6</span> 
               </label>
             </td>
           </tr>
@@ -1505,7 +1507,7 @@ function MyForm({paper,writePaper}) {
                   value="GPX" 
                   checked={formData.sCityLower1 === "GPX" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  GPX
+                /><span class="mark">GPX</span>  
               </label>
             </td>
             <td>
@@ -1516,7 +1518,7 @@ function MyForm({paper,writePaper}) {
                   value="GPX" 
                   checked={formData.sCityLower2 === "GPX" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  GPX
+                /><span class="mark">GPX</span>  
               </label>
             </td>
             <td>
@@ -1527,7 +1529,7 @@ function MyForm({paper,writePaper}) {
                   value="GPX" 
                   checked={formData.sCityLower3 === "GPX" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  GPX
+                /><span class="mark">GPX</span>  
               </label>
             </td>
             <td>
@@ -1538,7 +1540,7 @@ function MyForm({paper,writePaper}) {
                   value="GPX" 
                   checked={formData.eCityLower1 === "GPX" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> GPX
+                /><span class="mark">GPX</span> 
               </label>
             </td>
             <td>
@@ -1549,7 +1551,7 @@ function MyForm({paper,writePaper}) {
                   value="GPX" 
                   checked={formData.eCityLower2 === "GPX" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> GPX
+                /><span class="mark">GPX</span> 
               </label>
             </td>
             <td>
@@ -1560,7 +1562,7 @@ function MyForm({paper,writePaper}) {
                   value="GPX" 
                   checked={formData.eCityLower3 === "GPX" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> GPX
+                /><span class="mark">GPX</span> 
               </label>
             </td>
             <td></td>
@@ -1572,7 +1574,7 @@ function MyForm({paper,writePaper}) {
                   value="7" 
                   checked={formData.numseats === "7" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 7
+                /><span class="mark">7</span> 
               </label>
             </td>
             <td></td>
@@ -1584,7 +1586,7 @@ function MyForm({paper,writePaper}) {
                   value="7" 
                   checked={formData.trainDigit1 === "7" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 7
+                /><span class="mark">7</span> 
               </label>
             </td>
             <td>
@@ -1595,7 +1597,7 @@ function MyForm({paper,writePaper}) {
                   value="7" 
                   checked={formData.trainDigit2 === "7" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 7
+                /><span class="mark">7</span> 
               </label>
             </td>
             <td>
@@ -1606,7 +1608,7 @@ function MyForm({paper,writePaper}) {
                   value="7" 
                   checked={formData.trainDigit3 === "7" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 7
+                /><span class="mark">7</span> 
               </label>
             </td>
             <td>
@@ -1617,7 +1619,7 @@ function MyForm({paper,writePaper}) {
                   value="7" 
                   checked={formData.carDigit1 === "7" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 7
+                /><span class="mark">7</span> 
               </label>
             </td>
             <td>
@@ -1628,7 +1630,7 @@ function MyForm({paper,writePaper}) {
                   value="7" 
                   checked={formData.carDigit2 === "7" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 7
+                /><span class="mark">7</span> 
               </label>
             </td>
             <td></td>
@@ -1640,7 +1642,7 @@ function MyForm({paper,writePaper}) {
                   value="7" 
                   checked={formData.dateDigit1 === "7" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 7
+                /><span class="mark">7</span> 
               </label>
             </td>
             <td>
@@ -1651,7 +1653,7 @@ function MyForm({paper,writePaper}) {
                   value="7" 
                   checked={formData.dateDigit2 === "7" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 7
+                /><span class="mark">7</span> 
               </label>
             </td>
             <td>
@@ -1662,7 +1664,7 @@ function MyForm({paper,writePaper}) {
                   value="7" 
                   checked={formData.dateDigit3 === "7" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 7
+                /><span class="mark">7</span> 
               </label>
             </td>
           </tr>
@@ -1675,7 +1677,7 @@ function MyForm({paper,writePaper}) {
                   value="Q" 
                   checked={formData.operation === 'Q'} 
                   onChange={handleChange} 
-                /><span class="mark"></span> Q
+                /><span class="mark">Q</span> 
               </label>
             </td>
             <td></td>
@@ -1687,7 +1689,7 @@ function MyForm({paper,writePaper}) {
                   value="HQY" 
                   checked={formData.sCityLower1 === "HQY" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  HQY
+                /><span class="mark">HQY</span>  
               </label>
             </td>
             <td>
@@ -1698,7 +1700,7 @@ function MyForm({paper,writePaper}) {
                   value="HQY" 
                   checked={formData.sCityLower2 === "HQY" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  HQY
+                /><span class="mark">HQY</span>  
               </label>
             </td>
             <td>
@@ -1709,7 +1711,7 @@ function MyForm({paper,writePaper}) {
                   value="HQY" 
                   checked={formData.sCityLower3 === "HQY" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  HQY
+                /><span class="mark">HQY</span>  
               </label>
             </td>
             <td>
@@ -1720,7 +1722,7 @@ function MyForm({paper,writePaper}) {
                   value="HQY" 
                   checked={formData.eCityLower1 === "HQY" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> HQY
+                /><span class="mark">HQY</span> 
               </label>
             </td>
             <td>
@@ -1731,7 +1733,7 @@ function MyForm({paper,writePaper}) {
                   value="HQY" 
                   checked={formData.eCityLower2 === "HQY" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> HQY
+                /><span class="mark">HQY</span> 
               </label>
             </td>
             <td>
@@ -1742,7 +1744,7 @@ function MyForm({paper,writePaper}) {
                   value="HQY" 
                   checked={formData.eCityLower3 === "HQY" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> HQY
+                /><span class="mark">HQY</span> 
               </label>
             </td>
             <td></td>
@@ -1754,7 +1756,7 @@ function MyForm({paper,writePaper}) {
                   value="8" 
                   checked={formData.numseats === "8" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 8
+                /><span class="mark">8</span> 
               </label>
             </td>
             <td></td>
@@ -1766,7 +1768,7 @@ function MyForm({paper,writePaper}) {
                   value="8" 
                   checked={formData.trainDigit1 === "8" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 8
+                /><span class="mark">8</span> 
               </label>
             </td>
             <td>
@@ -1777,7 +1779,7 @@ function MyForm({paper,writePaper}) {
                   value="8" 
                   checked={formData.trainDigit2 === "8" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 8
+                /><span class="mark">8</span> 
               </label>
             </td>
             <td>
@@ -1788,7 +1790,7 @@ function MyForm({paper,writePaper}) {
                   value="8" 
                   checked={formData.trainDigit3 === "8" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 8
+                /><span class="mark">8</span> 
               </label>
             </td>
             <td>
@@ -1799,7 +1801,7 @@ function MyForm({paper,writePaper}) {
                   value="8" 
                   checked={formData.carDigit1 === "8" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 8
+                /><span class="mark">8</span> 
               </label>
             </td>
             <td>
@@ -1810,7 +1812,7 @@ function MyForm({paper,writePaper}) {
                   value="8" 
                   checked={formData.carDigit2 === "8" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 8
+                /><span class="mark">8</span> 
               </label>
             </td>
             <td></td>
@@ -1822,7 +1824,7 @@ function MyForm({paper,writePaper}) {
                   value="8" 
                   checked={formData.dateDigit1 === "8" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 8
+                /><span class="mark">8</span> 
               </label>
             </td>
             <td>
@@ -1833,7 +1835,7 @@ function MyForm({paper,writePaper}) {
                   value="8" 
                   checked={formData.dateDigit2 === "8" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 8
+                /><span class="mark">8</span> 
               </label>
             </td>
             <td>
@@ -1844,7 +1846,7 @@ function MyForm({paper,writePaper}) {
                   value="8" 
                   checked={formData.dateDigit3 === "8" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 8
+                /><span class="mark">8</span> 
               </label>
             </td>
           </tr>
@@ -1857,7 +1859,7 @@ function MyForm({paper,writePaper}) {
                   value="R" 
                   checked={formData.operation === 'R'} 
                   onChange={handleChange} 
-                /><span class="mark"></span> R
+                /><span class="mark">R</span> 
               </label>
             </td>
             <td>
@@ -1868,7 +1870,7 @@ function MyForm({paper,writePaper}) {
                   value="Z" 
                   checked={formData.accom === 'Z'} 
                   onChange={handleChange} 
-                /><span class="mark"></span> Z
+                /><span class="mark">Z</span> 
               </label>
             </td>
             <td>
@@ -1879,7 +1881,7 @@ function MyForm({paper,writePaper}) {
                   value="IRZ" 
                   checked={formData.sCityLower1 === "IRZ" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  IRZ
+                /><span class="mark">IRZ</span>  
               </label>
             </td>
             <td>
@@ -1890,7 +1892,7 @@ function MyForm({paper,writePaper}) {
                   value="IRZ" 
                   checked={formData.sCityLower2 === "IRZ" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  IRZ
+                /><span class="mark">IRZ</span>  
               </label>
             </td>
             <td>
@@ -1901,7 +1903,7 @@ function MyForm({paper,writePaper}) {
                   value="IRZ" 
                   checked={formData.sCityLower3 === "IRZ" } 
                   onChange={handleChange} 
-                /><span class="mark"></span>  IRZ
+                /><span class="mark">IRZ</span>  
               </label>
             </td>
             <td>
@@ -1912,7 +1914,7 @@ function MyForm({paper,writePaper}) {
                   value="IRZ" 
                   checked={formData.eCityLower1 === "IRZ" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> IRZ
+                /><span class="mark">IRZ</span> 
               </label>
             </td>
             <td>
@@ -1923,7 +1925,7 @@ function MyForm({paper,writePaper}) {
                   value="IRZ" 
                   checked={formData.eCityLower2 === "IRZ" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> IRZ
+                /><span class="mark">IRZ</span>
               </label>
             </td>
             <td>
@@ -1934,7 +1936,7 @@ function MyForm({paper,writePaper}) {
                   value="IRZ" 
                   checked={formData.eCityLower3 === "IRZ" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> IRZ
+                /><span class="mark">IRZ</span> 
               </label>
             </td>
             <td></td>
@@ -1946,7 +1948,7 @@ function MyForm({paper,writePaper}) {
                   value="9" 
                   checked={formData.numseats === "9" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 9
+                /><span class="mark">9</span> 
               </label>
             </td>
             <td></td>
@@ -1958,7 +1960,7 @@ function MyForm({paper,writePaper}) {
                   value="9" 
                   checked={formData.trainDigit1 === "9" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 9
+                /><span class="mark">9</span> 
               </label>
             </td>
             <td>
@@ -1969,7 +1971,7 @@ function MyForm({paper,writePaper}) {
                   value="9" 
                   checked={formData.trainDigit2 === "9" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 9
+                /><span class="mark">9</span> 
               </label>
             </td>
             <td>
@@ -1980,7 +1982,7 @@ function MyForm({paper,writePaper}) {
                   value="9" 
                   checked={formData.trainDigit3 === "9" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 9
+                /><span class="mark">9</span> 
               </label>
             </td>
             <td>
@@ -1991,7 +1993,7 @@ function MyForm({paper,writePaper}) {
                   value="9" 
                   checked={formData.carDigit1 === "9" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 9
+                /><span class="mark">9</span> 
               </label>
             </td>
             <td>
@@ -2002,7 +2004,7 @@ function MyForm({paper,writePaper}) {
                   value="9" 
                   checked={formData.carDigit2 === "9" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 9
+                /><span class="mark">9</span> 
               </label>
             </td>
             <td></td>
@@ -2014,7 +2016,7 @@ function MyForm({paper,writePaper}) {
                   value="9" 
                   checked={formData.dateDigit1 === "9" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 9
+                /><span class="mark">9</span> 
               </label>
             </td>
             <td>
@@ -2025,7 +2027,7 @@ function MyForm({paper,writePaper}) {
                   value="9" 
                   checked={formData.dateDigit2 === "9" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 9
+                /><span class="mark">9</span> 
               </label>
             </td>
             <td>
@@ -2036,7 +2038,7 @@ function MyForm({paper,writePaper}) {
                   value="9" 
                   checked={formData.dateDigit3 === "9" } 
                   onChange={handleChange} 
-                /><span class="mark"></span> 9
+                /><span class="mark">9</span> 
               </label>
             </td>
           </tr>
@@ -2056,14 +2058,16 @@ export default function MyApp() {
     <div>
       <div>
         <h1>CN Electronic Passenger Reservation System</h1>
+        <a href='https://eprs-storage.s3.ca-central-1.amazonaws.com/Electronic+Passenger+Reservation+System.pdf'>Read the docs on how to use this!</a>
+        <br />
         <a href='https://github.com/coneypylon/cnr-reservations-1967'>View the code for the underlying system!</a>
       </div>
       <div>
-        <h2>punchcard</h2>
+        <h2>Mark-Sense Card</h2>
         <MyForm paper={paper} writePaper={writePaper}/>
       </div>
       <div className="centering-div">
-        <h2>teleprinter</h2><br />
+        <h2>Teleprinter</h2><br />
         <div className="bordered-div">
         {paper.map((item, index) => (
         <span key={index}>{item}<br /></span>
