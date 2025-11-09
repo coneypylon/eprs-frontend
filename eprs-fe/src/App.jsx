@@ -24,8 +24,9 @@ function callEPRS(queryString) {
   return fetch("https://6eybfhhyye.execute-api.ca-central-1.amazonaws.com/default/cnr-eprs-runner", requestOptions(queryString))
       .then((response) => {
         return response.json().then((data) => {
-          console.log(data);
-          return data;
+          const formattedData = data.replace(/\n/g, '<br />');
+          console.log(formattedData);
+          return formattedData;
         }).catch((err) => {
           console.log(err);
         })
@@ -88,7 +89,7 @@ function MyForm({paper,writePaper,cardtype}) {
 
     writePaper(prevPaper => ([
       ...prevPaper.slice(1),
-      `${parsedString}`
+      `<br />${parsedString}`
     ]));
 
     
@@ -97,7 +98,7 @@ function MyForm({paper,writePaper,cardtype}) {
       
       writePaper(prevPaper => ([
         ...prevPaper.slice(1),
-        `${jsonData}`
+        `<br />${jsonData}`
       ]));
     });
     
@@ -5586,7 +5587,7 @@ function MyForm({paper,writePaper,cardtype}) {
 
 export default function MyApp() {
   const location = 'MTL';
-  const [paper,writePaper] = useState(['','','','','']);
+  const [paper,writePaper] = useState(['<br />','<br />','<br />','<br />','<br />']);
   const cardTypes = ['Operator','Supervisor A','Supervisor B'];
   const [cardtype, setCardType] = useState('Operator');
 
@@ -5596,32 +5597,76 @@ export default function MyApp() {
 
   return (
     <div>
-      <div>
-        <h1>CN Electronic Passenger Reservation System</h1>
-        <a href='https://eprs-storage.s3.ca-central-1.amazonaws.com/Electronic+Passenger+Reservation+System.pdf'>Read the docs on how to use this!</a>
-        <br />
-        <a href='https://github.com/coneypylon/cnr-reservations-1967'>View the code for the underlying system!</a>
+      <div className='titlebox'>
+            <h1>CN Electronic Passenger Reservation System</h1>
+            <a href='https://eprs-storage.s3.ca-central-1.amazonaws.com/Electronic+Passenger+Reservation+System.pdf'>Read the full docs on how to use this!</a>
+            <br />
+            <a href='https://github.com/coneypylon/cnr-reservations-1967'>View the code for the underlying system!</a>
+            <br />
       </div>
-      <div>
-        <h2>Mark-Sense Card</h2>
+      <div className="bigbox">
         <div>
-          {cardTypes.map((type) => (
-          <button
-            key={type}
-            onClick={() => handleCardTypeChange(type)}
-          >
-            {type}
-          </button>
-        ))}
+          <div>
+            <h2>Mark-Sense Card</h2>
+            <div>
+              {cardTypes.map((type) => (
+              <button
+                key={type}
+                onClick={() => handleCardTypeChange(type)}
+              >
+                {type}
+              </button>
+            ))}
+            </div>
+            <div className="carddiv">
+              <MyForm paper={paper} writePaper={writePaper} cardtype={cardtype}/>
+            </div>
+          </div>
+          <div className="centering-div">
+            <h2>Teleprinter</h2><br />
+            <div className="bordered-div">
+              {paper.map((item, index) => (
+                <span key={index} dangerouslySetInnerHTML={{ __html: item }}/>
+              ))}
+            </div>
+          </div>
         </div>
-        <MyForm paper={paper} writePaper={writePaper} cardtype={cardtype}/>
-      </div>
-      <div className="centering-div">
-        <h2>Teleprinter</h2><br />
-        <div className="bordered-div">
-        {paper.map((item, index) => (
-        <span key={index}>{item}<br /></span>
-        ))}
+        <div className='sidebar'>
+          <h2>Quickstart</h2>
+          <h3>Commands</h3>
+          <ul>
+            <li>K: Cancel</li>
+            <li>A: Add (seats)</li>
+            <li>D: Decrement (seats)</li>
+            <li>T: Train Manifest</li>
+            <li>O: Test</li>
+            <li>E: Equip (train)</li>
+            <li>X: Close Out (train)</li>
+            <li>Q: Query</li>
+            <li>R: Reserve</li>
+          </ul>
+          <h3>Car Control Codes</h3>
+          <ul>
+            <li>00: Wildcard, take any train from start city to end city</li>
+            <li>99: Wildcard, take any car on the specified train from city to end city</li>
+          </ul>
+          <h3>Sample Trains</h3>
+          Note that odd trains go westbound, and even trains go eastbound
+          <ul>
+            <li>064 TOR to MTL</li>
+            <li>003 TOR to VAN</li>
+            <li>011 HFX to MTL</li>
+            <li>158 CHG to TOR</li>
+          </ul>
+          <h3>Errors</h3>
+          <ul>
+            <li>INVTR: The train # doesn't exist or doesn't go to the specified cities</li>
+            <li>INVFRM: The start city doesn't exist</li>
+            <li>INVTO: The end city doesn't exist</li>
+            <li>INVDTE: The date doesn't exist</li>
+            <li>INVCAR: The car doesn't exist on that train (hint: you can Equip the train with that car as a supervisor)</li>
+            <li>UN00: All the seats are reserved on that train or one of trip legs</li>
+          </ul>
         </div>
       </div>
     </div>

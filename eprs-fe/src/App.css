@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -45,17 +45,19 @@
   border: 2px solid rgb(0, 0, 0);
   padding: 10px;
   margin: 10px;
-  width: 50%;
+  width: 700px;
   height: 50%;
   text-align: left;
+  white-space: pre-wrap;
+  font-family: monospace;
 }
 
 .punchcard-table {
   border: 2px solid rgb(0, 0, 0);
   padding: 10px;
-  margin: 10px;
-  width: 100%;
-  height: 100px;
+  margin: 10px auto; 
+  width: 700px;
+  height: 50%;
   text-align: center;
 }
 
@@ -63,7 +65,7 @@
   border: 2px solid rgb(0, 0, 0);
   padding: 10px;
   margin: 10px;
-  width: 100%;
+  width: 700px;
   height: 25%;
   text-align: center;
 }
@@ -75,12 +77,44 @@
   align-items: center;
 }
 
+.bigbox {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 150px;
+}
+
+.titlebox {
+  margin-bottom: 25px;
+}
+
+.carddiv {
+  font-size: 12px;
+  max-height: 50%;
+}
+
+.maininterface {
+  display:flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  display:flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left:20px;
+  max-width: 500px;
+  padding-left: 20px;
+  text-align: left;
+  border-left: 2px solid rgb(0, 0, 0);
+}
+
 /* Customize the label (the mark-sense) */
 .mark-sense {
   display: block;
   position: relative;
   padding-left: 0px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -110,16 +144,16 @@
   top: 0;
   left: 0;
   
-  height: 30px; 
+  height: 25px; 
   width: 10px; 
   
-  margin-right: 10px;
+  margin-right: 7px;
   vertical-align: top;
   background-color: #eee;
   border-radius: 0;
   
   /* Inherit text styling from .mark-sense, but can be customized here */
-  font-size: 14px; 
+  font-size: 12px; 
   writing-mode: horizontal-lr;
 }
 
