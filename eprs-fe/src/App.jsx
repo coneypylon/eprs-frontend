@@ -5,7 +5,7 @@ import { useQueueState } from 'rooks';
 // some constants, why not
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
-myHeaders.append("X-Api-Key", "omLEeExspff66tddII2Z9iOqonqdra25vSroLKo0");
+myHeaders.append("X-Api-Key", "");
 
 const raw = "QZTORMTL0606410045"
 
@@ -128,17 +128,6 @@ function MyForm({paper,writePaper}) {
               <label class="mark-sense">
                 <input 
                   type="radio" 
-                  name="eCityUpper1" 
-                  value="0" 
-                  checked={formData.eCityUpper1 === "0" } 
-                  onChange={handleChange} 
-                /><span class="mark"></span> 
-              </label>
-            </td>
-            <td>
-              <label class="mark-sense">
-                <input 
-                  type="radio" 
                   name="sCityUpper2" 
                   value="0" 
                   checked={formData.sCityUpper2 === "0" } 
@@ -150,9 +139,9 @@ function MyForm({paper,writePaper}) {
               <label class="mark-sense">
                 <input 
                   type="radio" 
-                  name="eCityUpper2" 
+                  name="sCityUpper3" 
                   value="0" 
-                  checked={formData.eCityUpper2 === "0" } 
+                  checked={formData.sCityUpper3 === "0" } 
                   onChange={handleChange} 
                 /><span class="mark"></span> 
               </label>
@@ -161,9 +150,20 @@ function MyForm({paper,writePaper}) {
               <label class="mark-sense">
                 <input 
                   type="radio" 
-                  name="sCityUpper3" 
+                  name="eCityUpper1" 
                   value="0" 
-                  checked={formData.sCityUpper3 === "0" } 
+                  checked={formData.eCityUpper1 === "0" } 
+                  onChange={handleChange} 
+                /><span class="mark"></span> 
+              </label>
+            </td>
+            <td>
+              <label class="mark-sense">
+                <input 
+                  type="radio" 
+                  name="eCityUpper2" 
+                  value="0" 
+                  checked={formData.eCityUpper2 === "0" } 
                   onChange={handleChange} 
                 /><span class="mark"></span> 
               </label>
